@@ -22,6 +22,22 @@
         ¿Quiénes somos?
       </v-btn>
 
+      <v-btn text>
+        Áreas
+      </v-btn>
+
+      <v-btn text>
+        Proyectos
+      </v-btn>
+
+      <v-btn text>
+        Productos
+      </v-btn>
+
+      <v-btn text>
+        Actividades
+      </v-btn>
+
     </v-app-bar>
   </div>
 </template>
