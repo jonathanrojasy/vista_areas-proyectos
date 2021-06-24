@@ -1,48 +1,27 @@
 <template>
   <div>
     <v-app-bar
-        color="indigo darken-4"
-        dense
+        color="#040424"
         dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>CCAT</v-toolbar-title>
+      <v-img
+          class="mx-2"
+          :src="require('../assets/CCAT_logo_2021.png')"
+          max-height="50"
+          max-width="50"
+          contain
+      ></v-img>
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+      <v-btn text>
+        Inicio
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+      <v-btn text>
+        ¿Quiénes somos?
       </v-btn>
 
-      <v-menu
-          left
-          bottom
-      >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-              icon
-              v-bind="attrs"
-              v-on="on"
-          >
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-              v-for="n in 5"
-              :key="n"
-              @click="() => {}"
-          >
-            <v-list-item-title>Option {{ n }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
     </v-app-bar>
   </div>
 </template>
