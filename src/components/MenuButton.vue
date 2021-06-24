@@ -1,10 +1,9 @@
 <template>
   <div class="text-center">
     <v-menu
-        open-on-hover
         offset-y
-        :close-on-click="true"
-        :rounded="true"
+        open-on-hover
+        :close-on-content-click="false"
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -16,11 +15,8 @@
         </v-btn>
       </template>
       <v-list>
-        <v-list-item
-            v-for="(item, index) in itemsButton"
-            :key="index"
-        >
-          <SubMenuButton :subMenuName="item.title" :subMenuItems="subItems"></SubMenuButton>
+        <v-list-item>
+          <TreeViewMenu :sub-menu-items="itemsButton"></TreeViewMenu>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -28,19 +24,13 @@
 </template>
 
 <script>
-import SubMenuButton from "./SubMenuButton";
+import TreeViewMenu from "./TreeviewMenu";
 export default {
   name: "MenuButton",
+  props:['nameButton','itemsButton'],
   components:{
-    SubMenuButton,
+    TreeViewMenu,
   },
-  props: ['nameButton', 'itemsButton'],
-  data: () => ({
-    subItems: [
-      { title: 'Dir o Ger 1' },
-      { title: 'Dir o Ger 2' },
-    ],
-  }),
 }
 </script>
 

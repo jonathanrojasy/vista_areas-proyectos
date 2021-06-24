@@ -53,8 +53,24 @@ export default {
   },
   data: () => ({
     itemsAreas: [
-      { title: 'Direcciones' },
-      { title: 'Gerencias' },
+      {
+        id: 1,
+        name: 'Direcciones',
+        children: [
+          { id: 2, name: 'Académica' },
+          { id: 3, name: 'Cultura' },
+          { id: 4, name: 'IDI' },
+        ],
+      },
+      {
+        id: 2,
+        name: 'Gerencias',
+        children: [
+          { id: 2, name: 'TI' },
+          { id: 3, name: 'GTH' },
+          { id: 4, name: 'Logística' },
+        ],
+      },
     ],
   }),
 };
