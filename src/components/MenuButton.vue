@@ -19,7 +19,7 @@
             v-for="(item, index) in itemsButton"
             :key="index"
         >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <SubMenuButton :subMenuName="item.title" :subMenuItems="subItems"></SubMenuButton>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -27,9 +27,19 @@
 </template>
 
 <script>
+import SubMenuButton from "./SubMenuButton";
 export default {
   name: "MenuButton",
+  components:{
+    SubMenuButton,
+  },
   props: ['nameButton', 'itemsButton'],
+  data: () => ({
+    subItems: [
+      { title: 'Uno' },
+      { title: 'Dos' },
+    ],
+  }),
 }
 </script>
 
