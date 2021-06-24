@@ -1,5 +1,9 @@
 <template>
-  <v-treeview :items="subMenuItems"></v-treeview>
+  <v-treeview
+      :items="subMenuItems"
+      activatable
+      open-on-click
+  ></v-treeview>
 </template>
 
 <script>
