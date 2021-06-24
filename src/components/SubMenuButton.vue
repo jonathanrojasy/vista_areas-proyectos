@@ -1,6 +1,9 @@
 <template>
   <div class="text-center">
-    <v-menu offset-x>
+    <v-menu
+        offset-x
+        open-on-hover
+    >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
             text

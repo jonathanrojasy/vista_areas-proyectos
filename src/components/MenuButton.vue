@@ -1,6 +1,7 @@
 <template>
   <div class="text-center">
     <v-menu
+        open-on-hover
         offset-y
         :close-on-click="true"
         :rounded="true"
@@ -36,8 +37,8 @@ export default {
   props: ['nameButton', 'itemsButton'],
   data: () => ({
     subItems: [
-      { title: 'Uno' },
-      { title: 'Dos' },
+      { title: 'Dir o Ger 1' },
+      { title: 'Dir o Ger 2' },
     ],
   }),
 }
