@@ -22,9 +22,7 @@
         ¿Quiénes somos?
       </v-btn>
 
-      <v-btn text>
-        Áreas
-      </v-btn>
+      <MenuButton name-button="Áreas" v-bind:items-button="itemsAreas"></MenuButton>
 
       <v-btn text>
         Proyectos
@@ -47,7 +45,17 @@
 </style>
 
 <script>
+import MenuButton from "./MenuButton";
 export default {
-  name: 'Navigation'
+  name: 'Navigation',
+  components:{
+    MenuButton,
+  },
+  data: () => ({
+    itemsAreas: [
+      { title: 'Direcciones' },
+      { title: 'Gerencias' },
+    ],
+  }),
 };
 </script>
