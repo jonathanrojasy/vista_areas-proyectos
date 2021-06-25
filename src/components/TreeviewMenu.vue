@@ -3,6 +3,7 @@
       :items="subMenuItems"
       activatable
       open-on-click
+      dense
   ></v-treeview>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
-  <v-app id="app-container">
+  <v-app>
     <Navigation></Navigation>
-    <v-main class="pt-0">
-      <DetailAreas></DetailAreas>
+    <v-main>
+      <detail-areas></detail-areas>
     </v-main>
     <Footer></Footer>
   </v-app>

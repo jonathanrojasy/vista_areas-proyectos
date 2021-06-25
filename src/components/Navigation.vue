@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container fluid class="pa-0">
     <v-app-bar
         color="#040424"
         dark
@@ -14,30 +14,45 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn text>
-        Inicio
+      <v-app-bar-nav-icon
+          class="d-flex d-sm-none"
+          @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+
+      <v-btn
+          text
+          v-for="item in buttons"
+          :key="item.id"
+          class="d-none d-lg-flex d-xl-none"
+      >
+        {{ item.name }}
       </v-btn>
-
-      <v-btn text>
-        ¿Quiénes somos?
-      </v-btn>
-
-      <MenuButton name-button="Áreas" v-bind:items-button="itemsAreas"></MenuButton>
-
-      <v-btn text>
-        Proyectos
-      </v-btn>
-
-      <v-btn text>
-        Productos
-      </v-btn>
-
-      <v-btn text>
-        Actividades
-      </v-btn>
-
     </v-app-bar>
-  </div>
+
+    <v-navigation-drawer
+        v-model="drawer"
+        absolute
+        right
+        temporary
+    >
+      <v-list
+          nav
+          dense
+      >
+        <v-list-item-group
+            v-model="group"
+            active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item
+              v-for="item in buttons"
+              :key="item.id"
+          >
+            <v-list-item-title>{{ item.name }}</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+  </v-container>
 </template>
 
 <style scoped>
@@ -45,33 +60,64 @@
 </style>
 
 <script>
-import MenuButton from "./MenuButton";
+//import MenuButton from "./MenuButton";
 export default {
   name: 'Navigation',
   components:{
-    MenuButton,
+
   },
   data: () => ({
-    itemsAreas: [
+    drawer: false,
+    group: null,
+    buttons: [
       {
         id: 1,
-        name: 'Direcciones',
-        children: [
-          { id: 2, name: 'Académica' },
-          { id: 3, name: 'Cultura' },
-          { id: 4, name: 'IDI' },
-        ],
+        name: 'Inicio'
       },
       {
         id: 2,
-        name: 'Gerencias',
-        children: [
-          { id: 2, name: 'TI' },
-          { id: 3, name: 'GTH' },
-          { id: 4, name: 'Logística' },
+        name: '¿Quiénes somos?'
+      },
+      {
+        id: 3,
+        name: 'Áreas',
+        itemsAreas: [
+          {
+            id: 1,
+            name: 'Direcciones',
+            children: [
+              { id: 1, name: 'Académica' },
+              { id: 2, name: 'Cultura' },
+              { id: 3, name: 'IDI' },
+              { id: 4, name: 'Marketing' },
+            ],
+          },
+          {
+            id: 2,
+            name: 'Gerencias',
+            children: [
+              { id: 1, name: 'TI' },
+              { id: 2, name: 'GTH' },
+              { id: 3, name: 'Logística' },
+              { id: 4, name: 'Económica' },
+            ],
+          },
         ],
       },
+      {
+        id: 4,
+        name: 'Proyectos'
+      },
+      {
+        id: 5,
+        name: 'Productos'
+      },
+      {
+        id: 6,
+        name: 'Próximos eventos'
+      },
     ],
+
   }),
 };
 </script>
