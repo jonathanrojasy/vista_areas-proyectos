@@ -3,7 +3,7 @@
     <Navigation :flat="flat" :color="color" />
     <v-main class="pt-0">
       <Home />
-      <detail-areas></detail-areas>
+      <detail-areas />
     </v-main>
     <v-scale-transition>
       <v-btn

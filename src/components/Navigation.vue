@@ -35,10 +35,11 @@
     >
       <v-toolbar-title>
         <v-img
-            :src="require('../assets/CCAT_logo_2021.png')"
+            :src="require('../assets/CCAT-LogoBlanco.png')"
             max-height="50"
             max-width="50"
             contain
+
         ></v-img>
       </v-toolbar-title>
 
