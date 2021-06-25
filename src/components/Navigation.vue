@@ -5,7 +5,7 @@
         app
         temporary
         dark
-        src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
+        :src="require('../assets/bgDrawer.jpg')"
     >
       <v-list
           nav
@@ -30,7 +30,7 @@
         :color="color"
         :flat="flat"
         dark
-        class="px-15"
+        class="px-8"
         :class="{ expand: flat }"
     >
       <v-toolbar-title>
@@ -62,9 +62,6 @@
 </template>
 
 <style scoped>
-.v-toolbar {
-  transition: 0.6s;
-}
 .expand {
   height: 80px !important;
   padding-top: 10px;

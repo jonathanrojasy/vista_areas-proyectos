@@ -1,6 +1,6 @@
 <template>
   <section id="hero">
-    <v-parallax dark src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" height="750">
+    <v-parallax dark :src="require('../assets/bgHero.jpg')" height="750">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
@@ -16,13 +16,7 @@
           </v-row>
         </v-col>
       </v-row>
-      <div class="svg-border-waves text-white">
-        <v-img src="@/assets/img/borderWaves.svg" />
-      </div>
     </v-parallax>
-    <div class="svg-border-waves">
-      <img src="../assets/wave2.svg" />
-    </div>
   </section>
 </template>
 
@@ -33,24 +27,8 @@ export default {
 </script>
 
 <style>
-.svg-border-waves .v-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3rem;
-  width: 100%;
-  overflow: hidden;
-}
 #hero {
   z-index: 0;
-}
-.svg-border-waves img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  margin-bottom: -2px;
-  z-index: -1;
 }
 </style>
 
