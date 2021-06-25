@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-row no-gutters>
       <v-col
           md="10"
@@ -28,12 +28,12 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script>
-import CardDescriptionArea from "../components/CardDescriptionArea"
-import ListGroupProyectos from "@/components/ListGroupProyectos";
+import CardDescriptionArea from "./DetailAreas/CardDescriptionArea"
+import ListGroupProyectos from "./DetailAreas/ListGroupProyectos";
 export default {
   name: 'DetailAreas',
   components:{

@@ -1,38 +1,11 @@
 <template>
-  <v-container fluid class="pa-0">
-    <v-app-bar
-        color="#040424"
-        dark
-    >
-      <v-img
-          class="mx-2"
-          :src="require('../assets/CCAT_logo_2021.png')"
-          max-height="50"
-          max-width="50"
-          contain
-      ></v-img>
-
-      <v-spacer></v-spacer>
-
-      <v-app-bar-nav-icon
-          class="d-flex d-sm-none"
-          @click.stop="drawer = !drawer"
-      ></v-app-bar-nav-icon>
-
-      <v-btn
-          text
-          v-for="item in buttons"
-          :key="item.id"
-          class="d-none d-lg-flex d-xl-none"
-      >
-        {{ item.name }}
-      </v-btn>
-    </v-app-bar>
-
+  <div>
     <v-navigation-drawer
         v-model="drawer"
-        absolute
-
+        app
+        temporary
+        dark
+        src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
     >
       <v-list
           nav
@@ -51,19 +24,63 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-  </v-container>
+
+    <v-app-bar
+        app
+        :color="color"
+        :flat="flat"
+        dark
+        class="px-15"
+        :class="{ expand: flat }"
+    >
+      <v-toolbar-title>
+        <v-img
+            :src="require('../assets/CCAT_logo_2021.png')"
+            max-height="50"
+            max-width="50"
+            contain
+        ></v-img>
+      </v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-app-bar-nav-icon
+          class="d-flex d-sm-none mr-4"
+          @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+
+      <v-btn
+          text
+          v-for="item in buttons"
+          :key="item.id"
+          class="d-none d-lg-flex d-xl-none"
+      >
+        {{ item.name }}
+      </v-btn>
+    </v-app-bar>
+  </div>
 </template>
 
 <style scoped>
-
+.v-toolbar {
+  transition: 0.6s;
+}
+.expand {
+  height: 80px !important;
+  padding-top: 10px;
+}
 </style>
 
 <script>
-//import MenuButton from "./MenuButton";
 export default {
   name: 'Navigation',
-  components:{
-
+  props: {
+    flat: {
+      type: Boolean,
+    },
+    color: {
+      type: String,
+    }
   },
   data: () => ({
     drawer: false,
@@ -116,7 +133,24 @@ export default {
         name: 'Próximos eventos'
       },
     ],
-
   }),
+  methods: {
+    onResize() {
+      this.isXs = window.innerWidth < 850;
+    },
+  },
+  watch: {
+    isXs(value) {
+      if (!value) {
+        if (this.drawer) {
+          this.drawer = false;
+        }
+      }
+    },
+  },
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize, { passive: true });
+  },
 };
 </script>

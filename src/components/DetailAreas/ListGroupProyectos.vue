@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ItemListProyecto from "@/components/ItemListProyecto";
+import ItemListProyecto from "./ItemListProyecto";
 export default {
   name: "ListGroupProyectos",
   components: {
