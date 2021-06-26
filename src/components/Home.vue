@@ -7,12 +7,14 @@
             <v-col cols="12" md="6" xl="8">
               <h1 class="display-2 font-weight-bold mb-4">CCAT</h1>
               <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur <br />
-                adipisicing elit. Maiores porro voluptatibus <br />
-                delectus nam optio harum!
+                Contamos con más de doscientos miembros,<br />
+                integrados tanto en la vida profesional como<br />
+                estudiantil que trabajan arduamente en los<br />
+                diferentes grupos de desarrollo de nuestro <br />
+                centro cultural.
               </h1>
             </v-col>
-            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
+            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"></v-col>
           </v-row>
         </v-col>
       </v-row>
@@ -22,7 +24,7 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
 }
 </script>
 

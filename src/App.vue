@@ -3,6 +3,7 @@
     <Navigation :flat="flat" :color="color" />
     <v-main class="pt-0">
       <Home />
+      <AboutCCAT />
       <detail-areas />
     </v-main>
     <v-scale-transition>
@@ -36,8 +37,9 @@
 <script>
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
-import DetailAreas from "./components/DetailAreas";
 import Home from "./components/Home";
+import DetailAreas from "./components/DetailAreas";
+import AboutCCAT from "./components/AboutCCAT";
 
 export default {
   name: 'App',
@@ -46,6 +48,7 @@ export default {
     Footer,
     Navigation,
     Home,
+    AboutCCAT,
   },
   data: () => ({
     fab: null,
