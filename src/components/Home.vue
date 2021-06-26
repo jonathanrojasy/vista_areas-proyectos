@@ -1,5 +1,5 @@
 <template>
-  <section id="hero">
+  <section id="home">
     <v-parallax dark :src="require('../assets/bgHero.jpg')" height="750">
       <v-row align="center" justify="center">
         <v-col cols="10">
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style>
-#hero {
+#home {
   z-index: 0;
 }
 </style>
