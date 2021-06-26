@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section id="areas">
     <v-row no-gutters>
       <v-col
           md="10"
@@ -28,8 +28,12 @@
         </v-card>
       </v-col>
     </v-row>
-  </div>
+  </section>
 </template>
+
+<style>
+
+</style>
 
 <script>
 import CardDescriptionArea from "./DetailAreas/CardDescriptionArea"
