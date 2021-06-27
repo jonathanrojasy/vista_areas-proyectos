@@ -29,7 +29,7 @@
             </v-col>
             <v-col cols="12" md="5" class="d-none d-md-flex">
               <v-img
-                  src="http://www.fiis.uni.edu.pe/images/contenidos/ccat/imagenes/img-1.png"
+                  :src="require('../assets/AboutCCAT.jpg')"
                   class="d-block ml-auto mr-auto"
                   max-width="400px"
               />
