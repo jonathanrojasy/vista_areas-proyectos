@@ -6,7 +6,7 @@
             cols="12"
             align="center" justify="center"
         >
-          <p class="text-h3 font-weight-light display-2">Nuestros valores</p>
+          <p class="mt-2 text-h3 font-weight-light display-2">Nuestros valores</p>
         </v-col>
       </v-row>
       <v-row>
@@ -58,7 +58,7 @@
               <v-card-title class="justify-center text-center">
                 {{item.title}}
               </v-card-title>
-              <v-card-text class="font-weight-medium mt-12 text-center text-subtitle-3">
+              <v-card-text class="font-weight-medium mt-6 text-center text-subtitle-3">
                 {{item.text}}
               </v-card-text>
             </v-card>
@@ -79,7 +79,7 @@ export default {
   data(){
     return{
       widthCard: 340,
-      heightCard: 200,
+      heightCard: 180,
       valuesRow1: [
         {
           title: 'Liderazgo',

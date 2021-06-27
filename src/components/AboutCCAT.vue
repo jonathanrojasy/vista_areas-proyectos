@@ -5,7 +5,7 @@
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="7">
-              <h1 class="font-weight-light display-2">{{about_1.title}}</h1>
+              <h1 class="mt-2 font-weight-light display-2">{{about_1.title}}</h1>
               <p class="text-h6 font-weight-light mb-3">
                 {{about_1.text}}
               </p>
