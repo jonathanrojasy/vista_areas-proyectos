@@ -4,9 +4,12 @@
       <v-row align="center" justify="center">
         <v-col
             cols="12"
-            class="align-center justify-center"
         >
-          <p class="text-h3 font-weight-light">Nuestros valores</p>
+          <v-row
+              align="center" justify="center"
+          >
+            <p class="text-h3 font-weight-light">Nuestros valores</p>
+          </v-row>
         </v-col>
       </v-row>
       <v-row>
