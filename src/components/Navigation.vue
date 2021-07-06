@@ -55,6 +55,7 @@
           v-for="item in buttons"
           :key="item.id"
           class="d-none d-lg-flex d-xl-none"
+          @click="$vuetify.goTo(item.id_element)"
       >
         {{ item.name }}
       </v-btn>
@@ -86,14 +87,17 @@ export default {
     buttons: [
       {
         id: 1,
+        id_element: '#home',
         name: 'Inicio'
       },
       {
         id: 2,
+        id_element: '#about',
         name: '¿Quiénes somos?'
       },
       {
         id: 3,
+        id_element: '#areas',
         name: 'Áreas',
         itemsAreas: [
           {
@@ -120,14 +124,17 @@ export default {
       },
       {
         id: 4,
+        id_element: '#proyects',
         name: 'Proyectos'
       },
       {
         id: 5,
+        id_element: '#products',
         name: 'Productos'
       },
       {
         id: 6,
+        id_element: '#nextevents',
         name: 'Próximos eventos'
       },
     ],

@@ -4,9 +4,9 @@
       <v-row align="center" justify="center">
         <v-col
             cols="12"
-            align="center" justify="center"
+            class="align-center justify-center"
         >
-          <p class="mt-2 text-h3 font-weight-light display-2">Nuestros valores</p>
+          <p class="text-h3 font-weight-light">Nuestros valores</p>
         </v-col>
       </v-row>
       <v-row>
@@ -82,7 +82,7 @@ export default {
       heightCard: 180,
       valuesRow1: [
         {
-          title: 'Liderazgo',
+          title: 'Respeto',
           text: 'Estamos preparados para dirigir grupos con capacidad de gestión humana.',
           icon: ''
         },
