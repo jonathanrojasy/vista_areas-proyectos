@@ -8,12 +8,12 @@
               <v-row
                   justify="center"
               >
-                <span class="text-h2 font-weight-light">{{areas.title}}</span>
+                <span class="text-h2 mt-2 font-weight-light">{{areas.title}}</span>
               </v-row>
               <v-row
                   v-for="area in areas.divisions"
                   :key="area.id"
-                  justify="center"
+                  justify="left"
               >
                 <span class="text-h3 font-weight-thin">{{area.title}}</span>
                 <ItemGroup :elements="area.elements"></ItemGroup>
@@ -46,22 +46,22 @@ export default {
               {
                 id: 1,
                 name: 'Académica',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 2,
                 name: 'CDH',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 3,
                 name: 'GTH',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 4,
                 name: 'IDI',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
             ]
           },
@@ -72,22 +72,22 @@ export default {
               {
                 id: 1,
                 name: 'Económica',
-                description: 'Área de ',
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 2,
                 name: 'Logística',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 3,
                 name: 'Proyectos Emblemáticos',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
               {
                 id: 4,
                 name: 'TI',
-                description: 'Área de '+this.name
+                description: function (){return 'Área de '+this.name}
               },
             ]
           },

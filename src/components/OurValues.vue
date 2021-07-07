@@ -2,70 +2,66 @@
   <section id="values">
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col
-            cols="12"
-        >
-          <v-row
-              align="center" justify="center"
-          >
+        <v-col cols="10">
+          <v-row align="center" justify="center">
             <p class="text-h3 font-weight-light">Nuestros valores</p>
           </v-row>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col
-            cols="12"
-            sm="4"
-            v-for="(item, index) in valuesRow1"
-            :key="index"
-        >
-          <v-hover
-              v-slot="{ hover }"
-              close-delay="200"
-          >
-            <v-card
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                class="mx-auto"
-                :height="heightCard"
-                :max-width="widthCard"
+          <v-row>
+            <v-col
+                cols="12"
+                sm="4"
+                v-for="(item, index) in valuesRow1"
+                :key="index"
             >
-              <v-card-title class="justify-center text-center">
-                {{item.title}}
-              </v-card-title>
-              <v-card-text class="font-weight-medium mt-6 text-center text-subtitle-3">
-                {{item.text}}
-              </v-card-text>
-            </v-card>
-          </v-hover>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col
-            cols="12"
-            sm="6"
-            v-for="(item, index) in valuesRow2"
-            :key="index"
-        >
-          <v-hover
-              v-slot="{ hover }"
-              close-delay="200"
-          >
-            <v-card
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                class="mx-auto"
-                :height="heightCard"
-                :max-width="widthCard"
+              <v-hover
+                  v-slot="{ hover }"
+                  close-delay="200"
+              >
+                <v-card
+                    :elevation="hover ? 16 : 2"
+                    :class="{ 'on-hover': hover }"
+                    class="mx-auto"
+                    :height="heightCard"
+                    :max-width="widthCard"
+                >
+                  <v-card-title class="justify-center text-center">
+                    {{item.title}}
+                  </v-card-title>
+                  <v-card-text class="font-weight-medium mt-4 text-center text-subtitle-3">
+                    {{item.text}}
+                  </v-card-text>
+                </v-card>
+              </v-hover>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col
+                cols="12"
+                sm="6"
+                v-for="(item, index) in valuesRow2"
+                :key="index"
             >
-              <v-card-title class="justify-center text-center">
-                {{item.title}}
-              </v-card-title>
-              <v-card-text class="font-weight-medium mt-6 text-center text-subtitle-3">
-                {{item.text}}
-              </v-card-text>
-            </v-card>
-          </v-hover>
+              <v-hover
+                  v-slot="{ hover }"
+                  close-delay="200"
+              >
+                <v-card
+                    :elevation="hover ? 16 : 2"
+                    :class="{ 'on-hover': hover }"
+                    class="mx-auto"
+                    :height="heightCard"
+                    :max-width="widthCard"
+                >
+                  <v-card-title class="justify-center text-center">
+                    {{item.title}}
+                  </v-card-title>
+                  <v-card-text class="font-weight-medium mt-4 text-center text-subtitle-3">
+                    {{item.text}}
+                  </v-card-text>
+                </v-card>
+              </v-hover>
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>

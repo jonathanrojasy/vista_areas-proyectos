@@ -4,27 +4,30 @@
       <v-container>
         <v-row>
           <v-col
-              v-for="n in 4"
-              :key="n"
+              v-for="element in elements"
+              :key="element.id"
               cols="12"
               md="3"
           >
-            <v-item v-slot="{ active, toggle }">
+            <v-item>
               <v-card
-                  :color="active ? 'primary' : ''"
                   class="d-flex align-center"
-                  dark
-                  height="200"
-                  @click="toggle"
+                  height="170"
               >
-                <v-scroll-y-transition>
-                  <div
-                      v-if="active"
-                      class="text-h2 flex-grow-1 text-center"
-                  >
-                    Active
-                  </div>
-                </v-scroll-y-transition>
+                <v-card-text>
+                  <v-col>
+                    <v-row align="center" justify="center">
+                      <span
+                          class="text-h5 font-weight-regular text-center"
+                      >{{element.name}}</span>
+                    </v-row>
+                    <v-row align="center" justify="center">
+                      <span
+                          class="text-subtitle-1 font-weight-light text-center"
+                      >{{ element.description()}}</span>
+                    </v-row>
+                  </v-col>
+                </v-card-text>
               </v-card>
             </v-item>
           </v-col>
@@ -43,11 +46,6 @@ export default {
   data: () => ({
     window: 0,
   }),
-  computed:{
-    length(){
-      return this.elements.length
-    }
-  }
 }
 </script>
 

@@ -18,6 +18,7 @@
           <v-list-item
               v-for="item in buttons"
               :key="item.id"
+              @click="$vuetify.goTo(item.id_element)"
           >
             <v-list-item-title>{{ item.name }}</v-list-item-title>
           </v-list-item>
