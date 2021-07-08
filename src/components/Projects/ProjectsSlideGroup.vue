@@ -21,14 +21,14 @@
         >
           <v-card-text>
             <v-row
-                class="pt-2 text-h6 font-weight-light"
                 align="center" justify="center">
-              <p class="text-center">{{project.name}}</p>
+              <span
+                  class="py-2 text-h6 text-center">{{project.name}}</span>
             </v-row>
             <v-row
                 class="px-2 pb-2"
                 justify="center">
-              <p>{{project.description}}</p>
+              <span class="text-subtitle-2">{{project.description}}</span>
             </v-row>
           </v-card-text>
         </v-card>

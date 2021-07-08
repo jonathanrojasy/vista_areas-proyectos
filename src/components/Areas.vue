@@ -13,7 +13,6 @@
               <v-row
                   v-for="area in areas.divisions"
                   :key="area.id"
-                  justify="left"
               >
                 <span class="text-h3 font-weight-thin">{{area.title}}</span>
                 <ItemGroup :elements="area.elements"></ItemGroup>

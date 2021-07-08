@@ -7,6 +7,7 @@
       <OurValues />
       <Areas />
       <Projects />
+      <Products />
     </v-main>
     <v-scale-transition>
       <v-btn
@@ -44,6 +45,7 @@ import AboutCCAT from "./components/AboutCCAT";
 import OurValues from "./components/OurValues";
 import Areas from "./components/Areas";
 import Projects from "./components/Projects";
+import Products from "./components/Products";
 export default {
   name: 'App',
   components: {
@@ -54,6 +56,7 @@ export default {
     OurValues,
     Areas,
     Projects,
+    Products,
   },
   data: () => ({
     fab: null,

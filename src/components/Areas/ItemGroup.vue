@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-item-group>
-      <v-container>
+      <v-container fluid>
         <v-row>
           <v-col
               v-for="element in elements"
@@ -10,25 +10,26 @@
               md="3"
           >
             <v-item>
-              <v-card
-                  class="d-flex align-center"
-                  height="170"
+              <v-hover
+                  v-slot="{ hover }"
+                  close-delay="200"
               >
-                <v-card-text>
-                  <v-col>
-                    <v-row align="center" justify="center">
-                      <span
-                          class="text-h5 font-weight-regular text-center"
-                      >{{element.name}}</span>
-                    </v-row>
-                    <v-row align="center" justify="center">
-                      <span
-                          class="text-subtitle-1 font-weight-light text-center"
-                      >{{ element.description()}}</span>
-                    </v-row>
-                  </v-col>
-                </v-card-text>
-              </v-card>
+                <v-card
+                    class="mx-auto"
+                    height="170"
+                    :elevation="hover ? 16 : 2"
+                    :class="{ 'on-hover': hover }"
+                >
+                  <v-container fluid>
+                    <v-col>
+                      <v-row
+                          class="justify-center text-center">
+                        <span class="text-h5 mx-auto font-weight-medium">{{element.name}}</span>
+                      </v-row>
+                    </v-col>
+                  </v-container>
+                </v-card>
+              </v-hover>
             </v-item>
           </v-col>
         </v-row>

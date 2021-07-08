@@ -6,7 +6,9 @@
           <v-row align="center" justify="center">
             <v-col>
               <v-row justify="center" align="center">
-                <span class="text-h2 mt-2 font-weight-light">Proyectos</span>
+                <span
+                    class="text-h2 mt-2 font-weight-light"
+                >Proyectos</span>
               </v-row>
               <v-row justify="center" align="center">
                 <ProjectsSlideGroup :projects="proyectosPrincipales"></ProjectsSlideGroup>
