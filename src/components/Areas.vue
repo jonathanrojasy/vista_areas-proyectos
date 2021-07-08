@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ItemGroup from "./Areas/ItemGroup";
+import ItemGroup from "./Areas/AreasItemGroup";
 
 export default {
   name: "Areas",

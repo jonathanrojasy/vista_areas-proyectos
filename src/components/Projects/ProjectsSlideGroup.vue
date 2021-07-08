@@ -7,17 +7,19 @@
     <v-slide-group
         v-model="model"
         class="pa-4"
-        active-class="success"
+        center-active
         show-arrows
     >
       <v-slide-item
           v-for="project in projects"
           :key="project.id"
+          v-slot="{toggle}"
       >
         <v-card
             class="ma-4"
             height="220"
             width="220"
+            @click="toggle"
         >
           <v-card-text>
             <v-row

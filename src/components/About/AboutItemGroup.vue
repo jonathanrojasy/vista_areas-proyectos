@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-item-group>
       <v-container fluid>
         <v-row>
@@ -7,7 +7,7 @@
               v-for="element in elements"
               :key="element.id"
               cols="12"
-              md="3"
+              :md="dinMd()"
           >
             <v-item>
               <v-hover
@@ -16,15 +16,23 @@
               >
                 <v-card
                     class="mx-auto"
-                    height="170"
+                    height="200"
+                    max-width="300"
                     :elevation="hover ? 16 : 2"
                     :class="{ 'on-hover': hover }"
                 >
-                  <v-container fluid>
+                  <v-container fill-height fluid>
                     <v-col>
                       <v-row
                           class="justify-center text-center">
-                        <span class="text-h5 mx-auto font-weight-medium">{{element.name}}</span>
+                        <span class="text-h6 mx-auto font-weight-medium">{{element.name}}</span>
+                      </v-row>
+                      <v-row
+                          class="justify-center text-center text-decoration-">
+                        <v-layout>
+                          <span class="text-subtitle-1 mt-2">{{element.description}}</span>
+                        </v-layout>
+
                       </v-row>
                     </v-col>
                   </v-container>
@@ -40,12 +48,13 @@
 
 <script>
 export default {
-  name: "GroupWindow",
+  name: "AboutItemGroup",
   props:{
     elements: Array,
   },
   data: () => ({
     window: 0,
+    dinMd: function () { return 12/this.elements.length},
   }),
 }
 </script>

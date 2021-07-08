@@ -42,7 +42,7 @@ import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
 import Home from "./components/Home";
 import AboutCCAT from "./components/AboutCCAT";
-import OurValues from "./components/OurValues";
+import OurValues from "./components/About/OurValues";
 import Areas from "./components/Areas";
 import Projects from "./components/Projects";
 import Products from "./components/Products";

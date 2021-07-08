@@ -2,7 +2,7 @@
   <section id="proyects">
     <v-container fluid>
       <v-row align="center" justify="center">
-        <v-col cols="10">
+        <v-col cols="12">
           <v-row align="center" justify="center">
             <v-col>
               <v-row justify="center" align="center">
