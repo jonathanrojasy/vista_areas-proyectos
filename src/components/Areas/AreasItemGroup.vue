@@ -20,7 +20,7 @@
                     :elevation="hover ? 16 : 2"
                     :class="{ 'on-hover': hover }"
                 >
-                  <v-container fluid>
+                  <v-container fill-height fluid>
                     <v-col>
                       <v-row
                           class="justify-center text-center">
