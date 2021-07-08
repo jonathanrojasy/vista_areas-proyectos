@@ -47,7 +47,7 @@
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon
-          class="d-flex d-sm-none mr-4"
+          class="d-flex d-sm-none d-none d-sm-flex d-md-none mr-4"
           @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
@@ -55,7 +55,7 @@
           text
           v-for="item in buttons"
           :key="item.id"
-          class="d-none d-lg-flex d-xl-none"
+          class="d-none d-md-flex d-xl-flex"
           @click="$vuetify.goTo(item.id_element)"
       >
         {{ item.name }}
