@@ -8,6 +8,7 @@
       <Areas />
       <Projects />
       <Products />
+      <NextEvents />
     </v-main>
     <v-scale-transition>
       <v-btn
@@ -46,6 +47,7 @@ import OurValues from "./components/About/OurValues";
 import Areas from "./components/Areas";
 import Projects from "./components/Projects";
 import Products from "./components/Products";
+import NextEvents from "./components/NextEvents";
 export default {
   name: 'App',
   components: {
@@ -57,6 +59,7 @@ export default {
     Areas,
     Projects,
     Products,
+    NextEvents,
   },
   data: () => ({
     fab: null,
