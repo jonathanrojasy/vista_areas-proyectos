@@ -17,6 +17,7 @@
         >
           <v-list-item
               v-for="item in buttons"
+              :to="setDirection"
               :key="item.id"
               @click="$vuetify.goTo(item.id_element)"
           >
