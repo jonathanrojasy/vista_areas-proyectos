@@ -54,8 +54,9 @@
         <v-btn
             color="#040424 lighten-2"
             text
+            to="/productos"
         >
-          <router-link to="/productos">Ver más</router-link>
+          Ver más
         </v-btn>
       </v-card-actions>
     </v-card>

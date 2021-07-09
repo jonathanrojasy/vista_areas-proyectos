@@ -3,7 +3,7 @@ import Products from "../views/ProductsPage.vue";
 
 export const routes = [
     {
-        path: '/',
+        path: '',
         name: 'home',
         component: Home
     },

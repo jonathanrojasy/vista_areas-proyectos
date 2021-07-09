@@ -47,7 +47,7 @@
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon
-          class="d-flex d-sm-none d-none d-sm-flex d-md-none mr-4"
+          class="d-flex d-sm-none d-none d-sm-flex d-md-none"
           @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
@@ -56,6 +56,7 @@
           v-for="item in buttons"
           :key="item.id"
           class="d-none d-md-flex d-xl-flex"
+          :to="setDirection"
           @click="$vuetify.goTo(item.id_element)"
       >
         {{ item.name }}
@@ -80,11 +81,12 @@ export default {
     },
     color: {
       type: String,
-    }
+    },
   },
   data: () => ({
     drawer: false,
     group: null,
+    direction: '',
     buttons: [
       {
         id: 1,
@@ -140,23 +142,21 @@ export default {
       },
     ],
   }),
-  methods: {
-    onResize() {
-      this.isXs = window.innerWidth < 850;
-    },
-  },
-  watch: {
-    isXs(value) {
-      if (!value) {
-        if (this.drawer) {
-          this.drawer = false;
-        }
+  computed: {
+    setDirection: function () {
+      if (this.$route.name === "home") {
+        return ''
+      } else {
+        return '/'
       }
-    },
+    }
   },
-  mounted() {
-    this.onResize();
-    window.addEventListener("resize", this.onResize, { passive: true });
+  created() {
+    if (this.$route.name === "home"){
+      this.direction = ''
+    }else{
+      this.direction = '/'
+    }
   },
 };
 </script>

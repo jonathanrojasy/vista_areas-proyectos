@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navigation :flat="flat" :color="color" />
-    <v-main class="pt-0">
+    <v-main :class="classMain">
       <v-container fluid class="pa-0">
         <router-view/>
       </v-container>
@@ -48,22 +48,30 @@ export default {
     fab: null,
     color: "",
     flat: null,
+    classMain: '',
   }),
   created() {
     const top = window.pageYOffset || 0;
-    if (top <= 60) {
+    if (top <= 60 && this.$route.name === "home") {
       this.color = "transparent";
       this.flat = true;
+      this.classMain = 'pt-0';
+    }else{
+      this.color = "#040424";
+      this.flat = false;
+      this.classMain = '';
     }
   },
   watch: {
     fab(value) {
-      if (value) {
+      if (value || this.$route.name !== "home") {
         this.color = '#040424';
         this.flat = false;
+        this.classMain = '';
       } else {
         this.color = "transparent";
         this.flat = true;
+        this.classMain = 'pt-0';
       }
     },
   },
@@ -76,6 +84,16 @@ export default {
     toTop() {
       this.$vuetify.goTo(0);
     },
+  },
+  updated() {
+    this.$nextTick( function (){
+      const top = window.pageYOffset || 0;
+      if(top === 0 && this.$route.name === "home"){
+        this.color = "transparent"
+        this.classMain = "pt-0"
+        this.flat = true
+      }
+    })
   }
 }
 </script>
