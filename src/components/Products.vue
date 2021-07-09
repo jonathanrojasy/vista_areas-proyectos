@@ -12,7 +12,7 @@
             align="center"
             justify="center"
         >
-          <ProductCard />
+          <ProductCard/>
         </v-row>
       </v-col>
     </v-container>
