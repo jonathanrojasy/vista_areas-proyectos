@@ -12,6 +12,7 @@
           <v-row
               align="center"
               justify="center"
+              class="py-4"
           >
             <v-sheet
                 height="500"

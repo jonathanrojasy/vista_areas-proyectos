@@ -2,13 +2,9 @@
   <v-app>
     <Navigation :flat="flat" :color="color" />
     <v-main class="pt-0">
-      <Home />
-      <AboutCCAT />
-      <OurValues />
-      <Areas />
-      <Projects />
-      <Products />
-      <NextEvents />
+      <v-container fluid class="pa-0">
+        <router-view/>
+      </v-container>
     </v-main>
     <v-scale-transition>
       <v-btn
@@ -41,25 +37,12 @@
 <script>
 import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
-import Home from "./components/Home";
-import AboutCCAT from "./components/AboutCCAT";
-import OurValues from "./components/About/OurValues";
-import Areas from "./components/Areas";
-import Projects from "./components/Projects";
-import Products from "./components/Products";
-import NextEvents from "./components/NextEvents";
+
 export default {
   name: 'App',
   components: {
     Footer,
     Navigation,
-    Home,
-    AboutCCAT,
-    OurValues,
-    Areas,
-    Projects,
-    Products,
-    NextEvents,
   },
   data: () => ({
     fab: null,
