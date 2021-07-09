@@ -1,16 +1,26 @@
-import Home from "../views/Home.vue";
-import Products from "../views/ProductsPage.vue";
+import Vue from 'vue'
+import VueRouter from "vue-router";
+
+Vue.use(VueRouter)
 
 export const routes = [
     {
         path: '',
         name: 'home',
-        component: Home
+        component: () => import("../views/Home.vue")
     },
     {
         path: '/productos',
         name: 'products',
-        component: Products
+        component: () =>  import("../views/ProductsPage.vue")
     }
 ]
+
+const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+})
+
+export default router;
 
