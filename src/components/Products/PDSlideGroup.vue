@@ -12,15 +12,13 @@
     >
       <v-slide-item
           v-for="product in products"
-          :key="product.title"
-          v-slot="{toggle}"
+          :key="product.id"
       >
         <v-card
             class="ma-4"
             height="100"
             width="100"
             rounded
-            @click="toggle"
         >
           <v-container fluid fill-height>
             <v-row
@@ -31,6 +29,7 @@
                   max-height="100"
                   max-width="100"
                   :src="product.imagenKit"
+                  @click="changeImage"
               ></v-img>
             </v-row>
           </v-container>
@@ -48,7 +47,15 @@ export default {
   },
   data: () => ({
     model: null,
+    image: null,
   }),
+  methods:{
+    changeImage(event){
+      this.image = event;
+      console.log(this.image);
+      this.$emit('imageChanged',this.image);
+    },
+  },
 }
 </script>
 

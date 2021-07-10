@@ -82,7 +82,14 @@ export default {
       this.fab = top > 60;
     },
     toTop() {
-      this.$vuetify.goTo(0);
+      if(this.$route.name === "home"){
+        this.$router.push({
+          name: 'home',
+          hash: "#home"
+        });
+      }else{
+        this.$vuetify.goTo(0);
+      }
     },
   },
   updated() {

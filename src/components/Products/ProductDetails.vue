@@ -16,7 +16,8 @@
                         <v-img
                             max-height="250"
                             max-width="300"
-                            :src="products[0].imagenKit"
+                            :src="products[imageId-1].imagenKit"
+                            @imageChanged="image = $event"
                         ></v-img>
                       </v-row>
                     </v-col>
@@ -56,8 +57,10 @@ export default {
   },
   data(){
     return{
+      imageId: 1,
       products: [
         {
+          id: 1,
           title: "Pelota",
           features: [
             {id: 1, name: "Utilidad", description: "Antiestrés"},
@@ -74,6 +77,7 @@ export default {
           imagenKit: require('/src/assets/kitCcatino/pelotaAntiestres.jpg'),
         },
         {
+          id: 2,
           title: "Mouse Pad",
           features: [
             {id: 1, name: "Material", description: "Biocuero"},
@@ -91,6 +95,7 @@ export default {
           imagenKit: require('/src/assets/kitCcatino/mousepadBiocuero-negro.jpg'),
         },
         {
+          id: 3,
           title: "Taza",
           features: [
             {id: 1, name: "Capacidad", description: "8 oz"},
@@ -109,7 +114,7 @@ export default {
         },
       ]
     };
-  }
+  },
 }
 </script>
 
