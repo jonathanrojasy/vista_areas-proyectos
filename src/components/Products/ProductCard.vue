@@ -54,7 +54,10 @@
         <v-btn
             color="#040424 lighten-2"
             text
-            to="/productos"
+            :to="{
+              path: 'productos/',
+              hash: '#showproduct'
+            }"
         >
           Ver más
         </v-btn>

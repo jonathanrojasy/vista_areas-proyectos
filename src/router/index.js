@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 export const routes = [
     {
-        path: '',
+        path: '/',
         name: 'home',
         component: () => import("../views/Home.vue")
     },
@@ -21,18 +21,6 @@ const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     scrollBehavior: (to, from, savedPosition) => {
-        /*
-        let scrollTo = 0
-        if (to.hash) {
-            console.log("hash")
-            scrollTo = to.hash
-        } else if (savedPosition) {
-            console.log("savedPos")
-            scrollTo = savedPosition.y
-        }
-
-        return goTo(scrollTo)
-        */
         if(savedPosition){
             return savedPosition;
         }else{
@@ -44,6 +32,7 @@ const router = new VueRouter({
                     offset = 50;
                     if(to.hash === "#areas") {offset = 60;}
                     if(from.hash === "#home"){offset = 0;}
+                    if(to.hash === "#showproduct"){offset = 80;}
                     return goTo(selector, {offset: offset});
                 }
                 return false;
