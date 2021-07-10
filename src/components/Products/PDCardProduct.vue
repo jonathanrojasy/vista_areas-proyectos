@@ -5,7 +5,13 @@
       flat
   >
     <v-card-title>{{ product.title }}</v-card-title>
-    <v-card-subtitle>{{ product.subtitle }}</v-card-subtitle>
+    <v-card-subtitle>
+      <span
+          class="text-subtitle-1"
+          v-for="item in product.features"
+          :key="item.id"
+      >{{ item.name }}: {{ item.description }}</span>
+    </v-card-subtitle>
     <v-card-text>
       <v-col>
         <v-row align="center">
