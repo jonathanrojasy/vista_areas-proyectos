@@ -42,7 +42,7 @@ const router = new VueRouter({
                 selector = to.hash;
                 if(document.querySelector(to.hash)){
                     offset = 50;
-                    if(to.hash === "#areas") {offset = 62;}
+                    if(to.hash === "#areas") {offset = 60;}
                     if(from.hash === "#home"){offset = 0;}
                     return goTo(selector, {offset: offset});
                 }
