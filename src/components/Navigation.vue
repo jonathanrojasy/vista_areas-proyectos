@@ -16,9 +16,11 @@
         >
           <v-list-item
               v-for="item in buttons"
-              :to="setDirection"
               :key="item.id"
-              @click="$vuetify.goTo(item.id_element)"
+              :to="{
+                name: 'home',
+                hash: item.id_element
+              }"
           >
             <v-list-item-title>{{ item.name }}</v-list-item-title>
           </v-list-item>
@@ -47,7 +49,7 @@
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon
-          class="d-flex d-sm-none d-none d-sm-flex d-md-none"
+          class="d-flex d-sm-none d-none d-sm-flex d-md-none py-2"
           @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
@@ -56,8 +58,10 @@
           v-for="item in buttons"
           :key="item.id"
           class="d-none d-md-flex d-xl-flex"
-          :to="setDirection"
-          @click="$vuetify.goTo(item.id_element)"
+          :to="{
+            name: 'home',
+            hash: item.id_element
+          }"
       >
         {{ item.name }}
       </v-btn>
@@ -86,7 +90,6 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    direction: '',
     buttons: [
       {
         id: 1,
@@ -142,21 +145,5 @@ export default {
       },
     ],
   }),
-  computed: {
-    setDirection: function () {
-      if (this.$route.name === "home") {
-        return ''
-      } else {
-        return '/'
-      }
-    }
-  },
-  created() {
-    if (this.$route.name === "home"){
-      this.direction = ''
-    }else{
-      this.direction = '/'
-    }
-  },
 };
 </script>

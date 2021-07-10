@@ -1,18 +1,16 @@
 <template>
-  <v-container fluid>
-    <v-row align="center" justify="center" class="pt-2">
-      <v-col cols="10">
-        <v-row align="center" justify="start">
-          <span class="text-h2 font-weight-regular text-center">PRODUCTOS</span>
-        </v-row>
-      </v-col>
-    </v-row>
+  <v-container fluid class="pa-0">
+    <ProductDetails/>
   </v-container>
 </template>
 
 <script>
+import ProductDetails from "../components/Products/ProductDetails";
 export default {
-  name: "ProductsPage"
+  name: "ProductsPage",
+  components:{
+    ProductDetails,
+  }
 }
 </script>
 
