@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
-    <v-row justify="center" class="pt-2">
+    <v-row align="center" justify="center" class="pt-2">
       <v-col cols="10">
-        <v-row justify="start">
+        <v-row align="center" justify="start">
           <span class="text-h2 font-weight-regular text-center">PRODUCTOS</span>
         </v-row>
       </v-col>

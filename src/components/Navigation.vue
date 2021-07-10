@@ -9,7 +9,6 @@
     >
       <v-list
           nav
-          dense
       >
         <v-list-item-group
             v-model="group"
