@@ -38,7 +38,7 @@
         </v-row>
       </v-col>
     </v-card-text>
-    <v-card-text class="pt-0">
+    <v-card-text class="pt-0 text-subtitle-2">
       {{ product.description }}
     </v-card-text>
     <v-item-group>
