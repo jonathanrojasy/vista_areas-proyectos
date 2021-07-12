@@ -6,6 +6,7 @@
 
 <script>
 import ProductDetails from "../components/Products/ProductDetails";
+
 export default {
   name: "ProductsPage",
   components:{

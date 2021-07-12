@@ -14,10 +14,10 @@
                     <v-col>
                       <v-row align="center" justify="center">
                         <v-img
-                            :key="productId"
-                            v-model="imgSelect"
+                            v-model="model"
                             max-height="250"
                             max-width="300"
+                            v-if="loadedArray"
                             :src="setImg"
                         ></v-img>
                       </v-row>
@@ -28,7 +28,7 @@
                   <v-item>
                     <v-col>
                       <v-row justify="center">
-                        <PDCardProduct :product="setProd" />
+                        <PDCardProduct v-if="loadedArray" :product="setProd" />
                       </v-row>
                     </v-col>
                   </v-item>
@@ -39,7 +39,7 @@
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col cols="10">
+        <v-col cols="12">
           <v-sheet
               class="mx-auto"
               elevation="8"
@@ -50,10 +50,11 @@
                 class="pa-4"
                 show-arrows
                 center-active
+                mandatory
             >
               <v-slide-item
-                  v-for="product in products"
-                  :key="product.id.toString()"
+                  v-for="producto in productos"
+                  :key="producto.id"
                   v-slot="{ active, toggle }"
               >
                 <v-card
@@ -61,8 +62,8 @@
                     height="100"
                     width="100"
                     rounded
-                    :img="product.imagenKit"
-                    @click="changeImg(toggle, product.id)"
+                    :img="setFirebaseImg(producto.imagenKit)"
+                    @click="changeImg(toggle, producto)"
                 >
                   <v-container fluid fill-height>
                     <v-row
@@ -74,7 +75,7 @@
                             v-if="active"
                             class="text-h6 flex-grow-1 text-center font-weight-light blue accent-1"
                         >
-                          {{ imgSelect }}
+                          Viendo
                         </div>
                       </v-scale-transition>
                     </v-row>
@@ -91,6 +92,8 @@
 
 <script>
 import PDCardProduct from "./PDCardProduct";
+import {db} from "../../firebase/db";
+
 export default {
   name: "ProductDetails",
   components:{
@@ -98,84 +101,45 @@ export default {
   },
   data(){
     return{
-      imgSelect: null,
-      productId: "1",
+      productoAux: null,
+      loadedArray: false,
       model: null,
-      products: [
-        {
-          id: 1,
-          title: "Pelota",
-          features: [
-            {id: 1, name: "Utilidad", description: "Antiestrés"},
-          ],
-          description: "Esta pelota te ayuda a liberar tensión al apretarla, es resistente al sudor y altas presiones de la mano.",
-          price: {
-            currency: "S/.",
-            amount: 4.5,
-          },
-          ratings: {
-            stars: 4,
-            votes: 22,
-          },
-          imagenKit: require('/src/assets/kitCcatino/pelotaAntiestres.jpg'),
-        },
-        {
-          id: 2,
-          title: "Mouse Pad",
-          features: [
-            {id: 1, name: "Material", description: "Biocuero"},
-            {id: 2, name: "Color", description: "Negro"}
-          ],
-          description: "La alfombrilla de ratón, alfombrilla posa ratón, almohadilla de ratón o mousepad, es la superficie sobre la que se apoya y se desliza el ratón o mouse de la computadora, de manera análoga al movimiento del puntero en la pantalla.",
-          price: {
-            currency: "S/.",
-            amount: 16,
-          },
-          ratings: {
-            stars: 4,
-            votes: 12,
-          },
-          imagenKit: require('/src/assets/kitCcatino/mousepadBiocuero-negro.jpg'),
-        },
-        {
-          id: 3,
-          title: "Taza",
-          features: [
-            {id: 1, name: "Capacidad", description: "8 oz"},
-            {id: 2, name: "Color", description: "Negro"}
-          ],
-          description: "Recipiente que sirve para beber líquidos, en especial bebidas calientes, como café o té; forma parte del servicio de mesa, es más ancho que alto, generalmente más ancho en la boca que en la base, y está provisto de un asa.",
-          price: {
-            currency: "S/.",
-            amount: 9,
-          },
-          ratings: {
-            stars: 4,
-            votes: 12,
-          },
-          imagenKit: require('/src/assets/kitCcatino/taza-negra-blanca.jpg'),
-        },
-      ]
+      productos: []
     };
   },
+  firestore: {
+    productos: db.collection('products'),
+  },
   methods:{
-    changeImg(toggle, id){
+    changeImg(toggle, obj){
       this.$vuetify.goTo("#showproduct")
-      this.setImg = id.toString();
-      return toggle;
+      this.productoAux = obj;
+      return toggle();
+    },
+    setFirebaseImg(nameiMG){
+      return require('/src/assets/kitCcatino/'+nameiMG);
     }
   },
   computed:{
     setImg:{
       get: function (){
-        return this.products[parseInt(this.productId)-1].imagenKit;
+        return require('/src/assets/kitCcatino/'+this.productoAux.imagenKit);
       },
-      set: function (id){
-        this.productId = id.toString();
+      set: function (nameImg){
+        this.imgSelect = nameImg;
       }
     },
     setProd(){
-      return this.products[parseInt(this.productId)-1];
+      return this.productoAux;
+    }
+  },
+  updated() {
+    if(!this.loadedArray){
+      this.loadedArray = true;
+      for(const aux in this.productos){
+        this.productoAux = this.productos[aux]
+        break;
+      }
     }
   }
 }
