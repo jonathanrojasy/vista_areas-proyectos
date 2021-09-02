@@ -13,25 +13,20 @@
       <v-slide-item
           v-for="project in projects"
           :key="project.id"
-          v-slot="{toggle}"
       >
         <v-card
-            class="ma-4"
+            class="ma-4 list-complete-item"
             height="220"
             width="220"
-            @click="toggle"
         >
-          <v-card-text>
-            <v-row
-                align="center" justify="center">
-              <span
-                  class="py-2 text-h6 text-center">{{project.name}}</span>
-            </v-row>
-            <v-row
-                class="px-2 pb-2"
-                justify="center">
-              <span class="text-subtitle-2">{{project.description}}</span>
-            </v-row>
+          <v-card class="list-complete-img" height="100%">
+            <v-img
+                :src="project.projectImg"
+                height="100%"
+            ></v-img>
+          </v-card>
+          <v-card-text class="overlay">
+              <span class="text">{{project.name}}</span>
           </v-card-text>
         </v-card>
       </v-slide-item>
@@ -52,5 +47,35 @@ export default {
 </script>
 
 <style scoped>
-
+  .list-complete-item .list-complete-img {
+      display: block;
+      width: 100%;
+      height: auto;
+  }
+  .list-complete-item .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: rgb(4, 4, 36);
+  }
+  .list-complete-item:hover .overlay {
+      opacity: 0.8;
+  }
+  .list-complete-item .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+  }
 </style>

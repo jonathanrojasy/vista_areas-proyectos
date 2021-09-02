@@ -1,16 +1,14 @@
 <template>
-  <section id="proyects">
+  <section id="projects">
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col cols="12">
           <v-row align="center" justify="center">
             <v-col>
-              <v-row justify="center" align="center">
-                <span
-                    class="text-h2 mt-2 font-weight-light"
-                >Proyectos</span>
+              <v-row align="center" justify="center">
+                <span class="text-h2 mt-2 font-weight-light">Proyectos</span>
               </v-row>
-              <v-row justify="center" align="center">
+              <v-row align="center" justify="center">
                 <ProjectsSlideGroup :projects="proyectosPrincipales"></ProjectsSlideGroup>
               </v-row>
             </v-col>
@@ -33,33 +31,33 @@ export default {
       proyectosPrincipales:[
         {
           id: 1,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 1',
+          projectImg: require('/src/assets/ProyectosImg/legado-logo.jpg')
         },
         {
           id: 2,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 2',
+          projectImg: require('/src/assets/ProyectosImg/mistuwa-logo.jpg')
         },
         {
           id: 3,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 3',
+          projectImg: require('/src/assets/ProyectosImg/zolid-logo.jpg')
         },
         {
           id: 4,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 4',
+          projectImg: require('/src/assets/ProyectosImg/legado-logo.jpg')
         },
         {
           id: 5,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 5',
+          projectImg: require('/src/assets/ProyectosImg/mistuwa-logo.jpg')
         },
         {
           id: 6,
-          name: 'Proyecto ',
-          description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
+          name: 'Proyecto 6',
+          projectImg: require('/src/assets/ProyectosImg/zolid-logo.jpg')
         },
       ]
     }
